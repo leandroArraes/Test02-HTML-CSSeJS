@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .p1 ,.p2 {
+      display: flex;
+      justify-content: center;
+    }
+    .formulario {
+    display: flex;
+    width: 190px;
+    align-items: center;
+    flex-direction: column;}
+    /* Estilo para os itens da lista */
+    li {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="p1" style="margin-top: 150px">
+    <!-- Tarefa 1: Botão que exibe um alerta "Olá, mundo!" -->
+    <button onclick="alert('Olá, mundo!')">Clique-me</button>
+
+    <!-- Tarefa 2: Caixa de texto e botão que exibe um alerta com o valor digitado -->
+    <input type="text" id="myInput">
+    <button onclick="exibirValor()">Exibir Valor</button>
+</div>
+<div class="p2" style="flex-direction: column; align-items: center">
+    <!-- Tarefa 3: Lista não ordenada com estilização de fundo dos itens -->
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  
+    <!-- Tarefa 4: Tabela com duas colunas e duas linhas -->
+    <table>
+      <tr>
+        <td>Valor 1</td>
+        <td>Valor 2</td>
+      </tr>
+      <tr>
+        <td>Valor 3</td>
+        <td>Valor 4</td>
+      </tr>
+    </table>
+</div>
+
+<div class="formulario" style="display: flex;  flex-direction: column"> 
+  <!-- Tarefa 5: Formulário com campos para nome, e-mail e mensagem -->
+  <form onsubmit="exibirAlerta(event)">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" required>
+
+    <label for="message">Mensagem:</label>
+    <textarea id="message" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</div>
+  
+  <script>
+    // Função para exibir o valor digitado no campo de texto
+    function exibirValor() {
+      var inputValue = document.getElementById('myInput').value;
+      alert(inputValue);
+    }
+
+    // Função para exibir os valores preenchidos no formulário
+    function exibirAlerta(event) {
+      event.preventDefault();
+      var nameValue = document.getElementById('name').value;
+      var emailValue = document.getElementById('email').value;
+      var messageValue = document.getElementById('message').value;
+
+      alert('Nome: ' + nameValue + '\nE-mail: ' + emailValue + '\nMensagem: ' + messageValue);
+    }
+  </script>
+</body>
+</html>
